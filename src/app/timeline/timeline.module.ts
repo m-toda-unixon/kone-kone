@@ -8,12 +8,15 @@ import { TimelinePageRoutingModule } from './timeline-routing.module';
 
 import { TimelinePage } from './timeline.page';
 
+
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    TimelinePageRoutingModule
+    TimelinePageRoutingModule,
+    
   ],
   declarations: [TimelinePage]
 })
