@@ -7,9 +7,22 @@ const routes: Routes = [
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
   },
   {
-    path: 'timeline',
-    loadChildren: () => import('./timeline/timeline.module').then( m => m.TimelinePageModule)
-  }
+    path: 'setting',
+    loadChildren: () => import('./setting/setting.module').then( m => m.SettingPageModule)
+  },
+  // {
+  //   path: 'timeline',
+  //   loadChildren: () => import('./timeline/timeline.module').then( m => m.TimelinePageModule)
+  // },
+  // {
+  //   path: 'talk',
+  //   loadChildren: () => import('./talk/talk.module').then( m => m.TalkPageModule)
+  // }
+  // ,
+  // {
+  //   path: 'message',
+  //   loadChildren: () => import('./message/message.module').then( m => m.MessagePageModule)
+  // }
 ];
 @NgModule({
   imports: [

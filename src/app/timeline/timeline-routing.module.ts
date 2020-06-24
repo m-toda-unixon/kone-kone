@@ -7,6 +7,10 @@ const routes: Routes = [
   {
     path: '',
     component: TimelinePage
+  },
+  {
+    path: 'message',
+    loadChildren: () => import('../message/message.module').then( m => m.MessagePageModule)
   }
 ];
 
