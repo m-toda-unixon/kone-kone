@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { TimelineService } from '../services/timeline/timeline.service';
 import { TimelineCard } from '../models/timeline-card';
 import { User } from '../models/user';
 @Component({
@@ -8,9 +9,12 @@ import { User } from '../models/user';
 })
 export class TimelinePage implements OnInit {
   timeline:any=[];
-  constructor() {
+  constructor(
+    private timelineS: TimelineService,
+  ) {
     // サンプルデータ
-    this.setSample(20);
+    //this.setSample(20);
+    this.getTimeline();
   }
   // サンプルデータ
   setSample(num){
@@ -29,6 +33,24 @@ export class TimelinePage implements OnInit {
   ngOnInit() {
   }
   refreshAction(event){
-    event.target.complete();
+    this.timelineS.getTimelineList()
+    .then((res) => {
+      this.timeline = res;
+      event.target.complete();
+    })
+    .catch((err) => {
+      console.log(`${err} Sorry about that`);
+      event.target.complete();
+  });
+    
+  }
+  getTimeline(){
+    this.timelineS.getTimelineList()
+    .then((res) => {
+      this.timeline = res;
+    })
+    .catch((err) => {
+      console.log(`${err} Sorry about that`);
+  });
   }
 }

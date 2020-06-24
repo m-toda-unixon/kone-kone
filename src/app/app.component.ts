@@ -13,10 +13,10 @@ import { environment } from '../environments/environment';
   styleUrls: ['app.component.scss']
 })
 export class AppComponent {
-
+  app;
   firestore;
   rdb;
-
+  storage;
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
@@ -30,8 +30,12 @@ export class AppComponent {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });
+    this.initializeFirebase();
+  }
+  initializeFirebase(){
     let app = firebase.initializeApp(environment.config);
-    this.firestore = firebase.firestore(app);
-    this.rdb = firebase.database(app);
+    this.firestore = firebase.firestore(this.app);
+    this.storage = firebase.storage(this.app)
+    this.rdb = firebase.database(this.app);
   }
 }
