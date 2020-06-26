@@ -8,4 +8,15 @@ export class TimelineCard {
       public heart: number,
     ) {
     }
+    toFirebaseArray(){
+      return {
+        id:this.id,
+        text:this.text,
+        user_id:this.user.id,
+        user_name:this.user.name,
+        user_avatar:this.user.avatar,
+        date:this.date,
+        heart:this.heart
+      }
+    }
   }
