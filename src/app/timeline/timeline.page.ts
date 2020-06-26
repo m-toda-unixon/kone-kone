@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
 import { TimelineService } from '../services/timeline/timeline.service';
 import { TimelineCard } from '../models/timeline-card';
 import { User } from '../models/user';
@@ -11,6 +12,7 @@ export class TimelinePage implements OnInit {
   timeline:any=[];
   constructor(
     private timelineS: TimelineService,
+    private router: Router
   ) {
     // サンプルデータ
     //this.setSample(20);
@@ -52,5 +54,8 @@ export class TimelinePage implements OnInit {
     .catch((err) => {
       console.log(`${err} Sorry about that`);
   });
+  }
+  nav_post(){
+    this.router.navigate(['/kone-kone/post']);
   }
 }
