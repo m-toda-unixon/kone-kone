@@ -58,4 +58,7 @@ export class TimelinePage implements OnInit {
       console.log(`${err} Sorry about that`);
   });
   }
+  nav_post(){
+    this.router.navigate(['/kone-kone/post']);
+  }
 }
