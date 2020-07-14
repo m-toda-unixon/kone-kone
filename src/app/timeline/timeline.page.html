@@ -6,8 +6,7 @@
 
 <ion-content>
   <ion-refresher (ionRefresh)="refreshAction($event)" slot="fixed" pullMin="40" pullMax="80">
-    <ion-refresher-content pullingIcon="arrow-dropdown"
-                           refreshingSpinner="circles">
+    <ion-refresher-content pullingIcon="arrow-dropdown" refreshingSpinner="circles">
     </ion-refresher-content>
   </ion-refresher>
   <ion-card *ngFor="let card of timeline">
@@ -16,7 +15,8 @@
         <img src="{{card.user.avatar}}">
       </ion-avatar>
       <ion-card-subtitle slot="end">
-        {{card.date}}
+        {{card.date | timelineDatePipe}}
+        
       </ion-card-subtitle>
       <ion-card-header>
         <ion-card-title>
@@ -36,9 +36,13 @@
       <ion-badge><ion-icon name="heart-outline"></ion-icon>{{card.heart}}</ion-badge>
     </ion-item>
   </ion-card>
-  <ion-fab vertical="bottom" horizontal="end">
-    <ion-fab-button (click)="nav_post()">
-      <ion-icon name="add"></ion-icon>
+  <ion-fab  vertical="bottom" horizontal="end">
+    <ion-fab-button>
+      <ion-icon name="arrow-back-circle"></ion-icon>
     </ion-fab-button>
+    <ion-fab-list side="start">
+      <ion-fab-button color="danger" (click)="goPost()"><ion-icon name="logo-instagram"></ion-icon></ion-fab-button>
+    </ion-fab-list>
   </ion-fab>
+
 </ion-content>

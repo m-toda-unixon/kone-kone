@@ -8,7 +8,7 @@ import { TimelinePageRoutingModule } from './timeline-routing.module';
 
 import { TimelinePage } from './timeline.page';
 
-
+import { TimelineDatePipePipe } from '../pipes/timeline-date-pipe.pipe';
 
 @NgModule({
   imports: [
@@ -18,6 +18,6 @@ import { TimelinePage } from './timeline.page';
     TimelinePageRoutingModule,
     
   ],
-  declarations: [TimelinePage]
+  declarations: [TimelinePage, TimelineDatePipePipe]
 })
 export class TimelinePageModule {}

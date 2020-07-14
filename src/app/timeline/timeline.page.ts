@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavController} from '@ionic/angular';
 import { TimelineService } from '../services/timeline/timeline.service';
 import { TimelineCard } from '../models/timeline-card';
 import { User } from '../models/user';
@@ -12,7 +12,7 @@ export class TimelinePage implements OnInit {
   timeline:any=[];
   constructor(
     private timelineS: TimelineService,
-    private router: Router
+    public navCtr:NavController
   ) {
     // サンプルデータ
     //this.setSample(20);
@@ -31,6 +31,9 @@ export class TimelinePage implements OnInit {
         )
       );
     }
+  }
+  goPost(){
+    this.navCtr.navigateForward("/post");
   }
   ngOnInit() {
   }
