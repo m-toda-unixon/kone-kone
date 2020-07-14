@@ -36,4 +36,13 @@
       <ion-badge><ion-icon name="heart-outline"></ion-icon>{{card.heart}}</ion-badge>
     </ion-item>
   </ion-card>
+  <ion-fab  vertical="bottom" horizontal="end">
+    <ion-fab-button>
+      <ion-icon name="arrow-back-circle"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="start">
+      <ion-fab-button color="danger" (click)="goPost()"><ion-icon name="logo-instagram"></ion-icon></ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+
 </ion-content>

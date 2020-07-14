@@ -10,6 +10,10 @@ const routes: Routes = [
     path: 'setting',
     loadChildren: () => import('./setting/setting.module').then( m => m.SettingPageModule)
   },
+  {
+    path: 'post',
+    loadChildren: () => import('./post/post.module').then( m => m.PostPageModule)
+  },
   // {
   //   path: 'timeline',
   //   loadChildren: () => import('./timeline/timeline.module').then( m => m.TimelinePageModule)
