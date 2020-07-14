@@ -23,10 +23,10 @@ const routes: Routes = [
   //   loadChildren: () => import('./talk/talk.module').then( m => m.TalkPageModule)
   // }
   // ,
-  // {
-  //   path: 'message',
-  //   loadChildren: () => import('./message/message.module').then( m => m.MessagePageModule)
-  // }
+  {
+    path: 'message',
+    loadChildren: () => import('./message/message.module').then( m => m.MessagePageModule)
+  }
 ];
 @NgModule({
   imports: [
