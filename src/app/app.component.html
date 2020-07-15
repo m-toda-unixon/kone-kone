@@ -1,3 +1,31 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-menu side="start" menuId="first" contentId="content1">
+    <ion-header>
+      
+    </ion-header>
+    <ion-content>
+      <ion-fab  vertical="top" horizontal="start" slot="fixed">
+        <ion-fab-button>
+            <img src='../../assets/icon/avatar.svg'>
+        </ion-fab-button>
+        <ion-fab-list side="end">
+          <ion-fab-button><img src='../../assets/icon/avatar.svg'></ion-fab-button>
+        </ion-fab-list>
+      </ion-fab>
+        <ion-card class="menu-card" >
+          <ion-card-header>
+            <ion-card-title>
+            ユーザー１
+            </ion-card-title>
+            <ion-card-subtitle>
+              user1
+            </ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-footer>
+            <ion-button color="danger" expand="full" fill="outline" class="logout" >logout</ion-button>
+          </ion-card-footer>
+        </ion-card>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet id="content1"></ion-router-outlet>
 </ion-app>
